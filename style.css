@@ -1,0 +1,117 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+}
+h1{
+    font-size: 2em;
+    color: #277CE7;
+    margin-bottom: 1.6em;
+}
+ul{
+     list-style-type: none;
+     padding: 0;
+     margin:  0;
+}
+li{
+    padding-left: 1em;
+    text-indent: -.7em;
+    font-size: 1.5em;
+    }
+input{
+    display: inline block;
+}
+li:before{
+     content: "* ";
+    color: #277CE7;
+}
+button{
+    background-color: #277CE7 ;
+    top: 120px;
+    font-size: 1.2em;
+    color: white;
+    outline: white;
+    position: absolute;
+}
+#app{
+    width: 80%;
+    margin-top: 5%;
+    text-align: center;
+}
+.buttons{
+    margin: 0 auto;
+    left: 15%;
+    position: relative;
+    margin-top: 5%;
+}
+.todo-list{
+    border-style: groove;
+    width: 50%;
+    margin: 0 auto;
+}
+.col{
+    float: left;
+    margin: 0 auto;
+    margin-left: 7%;
+}
+.logo{
+    background: url('vue_logo.png') no-repeat top left;
+    background-size: 90px;
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+.logo_container{
+    position: relative;
+    display: block;
+    float: left;
+    top: -50px;
+    left: 30px;
+}
+.logo_container p{
+    font-size: .6em;
+    text-align: center;
+}
+@media (max-width:600px){
+    h1{
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+    #app{
+        width: 90%;
+    }
+    button{
+        position: relative;
+        font-size: 1em;
+        margin: 0 auto;
+        margin-bottom: 10%;
+        top: 0;
+        text-align: center;
+    }
+    label{
+        display: block;
+        font-size: 1.2em;
+    }
+    .todo-list{
+    width: 100%;
+    }
+    .logo{
+    background: url('vue_logo.png') no-repeat top left;
+    background-size: 30px;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.buttons{
+    left: 0%;
+}
+.logo_container{
+    position: relative;
+    display: block;
+    float: left;
+    top: 0;
+    left: 10px;
+}
+.logo_container p{
+    font-size: .4em;
+}
+}

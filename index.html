@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+            <div class="todo-list">
+                <ul>
+                    <todo-item v-for="item in todolist"v-bind:todo="item"></todo-item>
+                </ul>
+            </div>
+        <div class="buttons">
+            <div class="col">
+                <label for="addItem">Add item </label>
+                <input id="addItem" type="text" v-model="todoadded">
+                <p>You are adding this item:</p>
+                    <p>{{todoadded}}</p>
+                <button v-on:click="add()">Add</button>
+            </div>
+            <div class="col">
+                <label for="removeItem">Remove item </label>
+                <input id="removeItem" type="text" v-model="todoremoved">
+                <p>You are removing this item:</p>
+                    <p>{{todoremoved}}</p>
+                <button v-on:click="remove()">Remove</button>
+            </div>
+        </div>
+
+       
+    </div>
+    
+    
+</body>
+<script>
+
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li > {{todo}} </li>'
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            title: 'Welcome to the todo list',
+            todolist: ["eat", "run","walk"],
+            todoadded: '',
+            todoremoved:''
+        },
+        created: function(){
+            console.log(this.todolist);
+        },
+        methods: {
+            add: function(){
+                var value = this.todoadded;
+                this.todolist.push(value);
+            },
+            remove: function(){
+                var todolist = this.todolist;
+                var  value = this.todoremoved;
+                var index = todolist.indexOf(value)
+                if( index == -1){
+                    alert(value + ' was not found in the list, try with other value');
+                    return
+                }else{
+                todolist.splice(index,1)
+                }
+                
+            }
+
+        }
+        
+    })
+</script>
+</html>
